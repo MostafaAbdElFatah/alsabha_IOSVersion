@@ -14,49 +14,29 @@ class SettingViewController: UIViewController {
 
     @IBOutlet weak var okButton: UIButton!
     @IBOutlet weak var settingView: UIView!
-    @IBOutlet weak var soundImage: UIImageView!{
+    @IBOutlet weak var soundSwitch: UISwitch!{
         didSet{
-            if userDefault.getSound() {
-                soundImage.image = #imageLiteral(resourceName: "checkBox")
-            }else{
-                soundImage.image = #imageLiteral(resourceName: "emptyCheckBox")
-            }
+            soundSwitch.isOn = userDefault.getSound()
         }
     }
-    @IBOutlet weak var vibratorImage: UIImageView!{
+    @IBOutlet weak var vibratorSwitch: UISwitch!{
         didSet{
-            if userDefault.getVibrator() {
-                soundImage.image = #imageLiteral(resourceName: "checkBox")
-            }else{
-                soundImage.image = #imageLiteral(resourceName: "emptyCheckBox")
-            }
+            vibratorSwitch.isOn = userDefault.getVibrator()
         }
     }
     
     @IBAction func viewTabed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil )
     }
+   
     
-    @IBAction func soundTabed(_ sender: Any) {
-        if soundImage.image == #imageLiteral(resourceName: "emptyCheckBox") {
-            soundImage.image = #imageLiteral(resourceName: "checkBox")
-            userDefault.saveSoundSetting(sound: true)
-        }else{
-            soundImage.image = #imageLiteral(resourceName: "emptyCheckBox")
-            userDefault.saveSoundSetting(sound: false)
-        }
-        soundImage.setNeedsDisplay()
+    @IBAction func soundValueChanged(_ sender: UISwitch) {
+        userDefault.saveSoundSetting(sound: sender.isOn)
     }
     
-    @IBAction func vibratorTabed(_ sender: Any) {
-        if vibratorImage.image == #imageLiteral(resourceName: "emptyCheckBox") {
-            vibratorImage.image = #imageLiteral(resourceName: "checkBox")
-            userDefault.saveVibratorSetting(vibrator: true)
-        }else{
-            vibratorImage.image = #imageLiteral(resourceName: "emptyCheckBox")
-            userDefault.saveVibratorSetting(vibrator: false)
-        }
-        vibratorImage.setNeedsDisplay()
+    
+    @IBAction func vibratorValueChanged(_ sender: UISwitch) {
+        userDefault.saveVibratorSetting(vibrator: sender.isOn)
     }
     
 }

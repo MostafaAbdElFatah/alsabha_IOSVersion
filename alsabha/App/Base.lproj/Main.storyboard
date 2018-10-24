@@ -239,6 +239,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2X-gi-uO4">
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="viewTabed:" destination="aFw-hf-mO6" eventType="touchUpInside" id="g4b-OW-NwZ"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NTb-HT-tD3">
                                 <rect key="frame" x="32" y="253" width="350" height="230"/>
                                 <subviews>
@@ -251,41 +258,26 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkBox" translatesAutoresizingMaskIntoConstraints="NO" id="H8H-iS-D6t">
-                                                <rect key="frame" x="310" y="20" width="30" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="SSm-PH-wPk"/>
-                                                    <constraint firstAttribute="width" constant="30" id="fi6-zM-clt"/>
-                                                </constraints>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vxu-wy-LUC">
-                                                <rect key="frame" x="0.0" y="0.0" width="350" height="70"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                                <state key="normal">
-                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vn7-JF-xC9">
+                                                <rect key="frame" x="291" y="18" width="51" height="31"/>
                                                 <connections>
-                                                    <action selector="soundTabed:" destination="aFw-hf-mO6" eventType="touchUpInside" id="zmG-r7-XCc"/>
+                                                    <action selector="soundValueChanged:" destination="aFw-hf-mO6" eventType="valueChanged" id="2gg-qc-cEv"/>
                                                 </connections>
-                                            </button>
+                                            </switch>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstItem="Vxu-wy-LUC" firstAttribute="leading" secondItem="Qj8-Zg-q0K" secondAttribute="leading" id="Gm7-lx-z4x"/>
                                             <constraint firstItem="k8H-3b-3ag" firstAttribute="leading" secondItem="Qj8-Zg-q0K" secondAttribute="leading" constant="10" id="JXq-qE-wLy"/>
                                             <constraint firstItem="k8H-3b-3ag" firstAttribute="top" secondItem="Qj8-Zg-q0K" secondAttribute="top" constant="15" id="LsJ-Gf-NBS"/>
-                                            <constraint firstAttribute="bottom" secondItem="Vxu-wy-LUC" secondAttribute="bottom" id="MzL-Ah-4si"/>
-                                            <constraint firstAttribute="trailing" secondItem="H8H-iS-D6t" secondAttribute="trailing" constant="10" id="Wf0-Mn-9b8"/>
-                                            <constraint firstAttribute="trailing" secondItem="Vxu-wy-LUC" secondAttribute="trailing" id="Y1V-Se-BdI"/>
-                                            <constraint firstItem="Vxu-wy-LUC" firstAttribute="top" secondItem="Qj8-Zg-q0K" secondAttribute="top" id="dlc-EU-lhQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="vn7-JF-xC9" secondAttribute="trailing" constant="10" id="aj4-Rm-8lS"/>
                                             <constraint firstAttribute="height" constant="70" id="l96-EA-1SS"/>
-                                            <constraint firstItem="H8H-iS-D6t" firstAttribute="top" secondItem="Qj8-Zg-q0K" secondAttribute="top" constant="20" id="mIw-yD-q5l"/>
-                                            <constraint firstItem="H8H-iS-D6t" firstAttribute="leading" relation="lessThanOrEqual" secondItem="k8H-3b-3ag" secondAttribute="trailing" constant="216" id="mga-pW-vi6"/>
+                                            <constraint firstItem="vn7-JF-xC9" firstAttribute="top" secondItem="Qj8-Zg-q0K" secondAttribute="top" constant="18" id="mjF-Bp-mfZ"/>
+                                            <constraint firstItem="vn7-JF-xC9" firstAttribute="leading" relation="lessThanOrEqual" secondItem="k8H-3b-3ag" secondAttribute="trailing" constant="197" id="nk9-e3-Ajf"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DJ1-Lj-NMw">
-                                        <rect key="frame" x="0.0" y="88" width="350" height="70"/>
+                                        <rect key="frame" x="0.0" y="98" width="350" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vibrator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2jc-8r-dqV">
                                                 <rect key="frame" x="10" y="10" width="102" height="36"/>
@@ -293,33 +285,22 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkBox" translatesAutoresizingMaskIntoConstraints="NO" id="ayT-24-nLD">
-                                                <rect key="frame" x="310" y="20" width="30" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="Yq3-hm-KpO"/>
-                                                    <constraint firstAttribute="width" constant="30" id="ak4-r7-9fP"/>
-                                                </constraints>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5T-y3-6QM">
-                                                <rect key="frame" x="0.0" y="0.0" width="350" height="70"/>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WuY-aL-1Ox">
+                                                <rect key="frame" x="291" y="13" width="51" height="31"/>
                                                 <connections>
-                                                    <action selector="vibratorTabed:" destination="aFw-hf-mO6" eventType="touchUpInside" id="d2e-4r-GrT"/>
+                                                    <action selector="vibratorValueChanged:" destination="aFw-hf-mO6" eventType="valueChanged" id="sP5-7N-Nnf"/>
                                                 </connections>
-                                            </button>
+                                            </switch>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="2jc-8r-dqV" firstAttribute="top" secondItem="DJ1-Lj-NMw" secondAttribute="top" constant="10" id="10H-vF-ABp"/>
-                                            <constraint firstAttribute="trailing" secondItem="z5T-y3-6QM" secondAttribute="trailing" id="3S8-vc-5jx"/>
-                                            <constraint firstAttribute="trailing" secondItem="ayT-24-nLD" secondAttribute="trailing" constant="10" id="9sV-lS-MDL"/>
+                                            <constraint firstAttribute="trailing" secondItem="WuY-aL-1Ox" secondAttribute="trailing" constant="10" id="D1u-kR-pue"/>
                                             <constraint firstAttribute="height" constant="70" id="N0A-sp-I3a"/>
-                                            <constraint firstItem="ayT-24-nLD" firstAttribute="top" secondItem="DJ1-Lj-NMw" secondAttribute="top" constant="20" id="eGR-fs-DVa"/>
-                                            <constraint firstAttribute="bottom" secondItem="z5T-y3-6QM" secondAttribute="bottom" id="p8i-OR-HoE"/>
-                                            <constraint firstItem="z5T-y3-6QM" firstAttribute="top" secondItem="DJ1-Lj-NMw" secondAttribute="top" id="pMT-Rc-7mF"/>
+                                            <constraint firstItem="WuY-aL-1Ox" firstAttribute="top" secondItem="DJ1-Lj-NMw" secondAttribute="top" constant="13" id="VlS-2i-Bbu"/>
+                                            <constraint firstItem="WuY-aL-1Ox" firstAttribute="leading" relation="lessThanOrEqual" secondItem="2jc-8r-dqV" secondAttribute="trailing" constant="179" id="gLh-H2-wWD"/>
                                             <constraint firstItem="2jc-8r-dqV" firstAttribute="leading" secondItem="DJ1-Lj-NMw" secondAttribute="leading" constant="10" id="sbm-Yn-t52"/>
-                                            <constraint firstItem="z5T-y3-6QM" firstAttribute="leading" secondItem="DJ1-Lj-NMw" secondAttribute="leading" id="ww0-mE-gfz"/>
-                                            <constraint firstItem="ayT-24-nLD" firstAttribute="leading" relation="lessThanOrEqual" secondItem="2jc-8r-dqV" secondAttribute="trailing" constant="198" id="yJI-7Y-b27"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPm-up-hOH">
@@ -333,8 +314,8 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds " value="YES"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="self.clipsToBounds " value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="self.layer.cornerRadius">
                                                 <integer key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
@@ -352,49 +333,44 @@
                                     <constraint firstAttribute="bottom" secondItem="tPm-up-hOH" secondAttribute="bottom" constant="10" id="L6R-2p-7B7"/>
                                     <constraint firstAttribute="height" constant="230" id="SvW-32-c2k"/>
                                     <constraint firstItem="Qj8-Zg-q0K" firstAttribute="top" secondItem="NTb-HT-tD3" secondAttribute="top" constant="8" id="WZg-nF-bkr"/>
-                                    <constraint firstItem="DJ1-Lj-NMw" firstAttribute="top" secondItem="Qj8-Zg-q0K" secondAttribute="bottom" constant="10" id="jR6-U1-sCj"/>
+                                    <constraint firstItem="DJ1-Lj-NMw" firstAttribute="top" secondItem="Qj8-Zg-q0K" secondAttribute="bottom" constant="20" id="jR6-U1-sCj"/>
                                     <constraint firstAttribute="trailing" secondItem="Qj8-Zg-q0K" secondAttribute="trailing" id="pl7-EW-Sxc"/>
                                     <constraint firstItem="Qj8-Zg-q0K" firstAttribute="leading" secondItem="NTb-HT-tD3" secondAttribute="leading" id="usW-HX-cVs"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <userDefinedRuntimeAttribute type="number" keyPath="self.layer.cornerRadius">
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds " value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="self.clipsToBounds " value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="zWu-pT-Q9n" firstAttribute="trailing" secondItem="Z2X-gi-uO4" secondAttribute="trailing" id="9wy-NF-tKj"/>
+                            <constraint firstItem="Z2X-gi-uO4" firstAttribute="leading" secondItem="zWu-pT-Q9n" secondAttribute="leading" id="If1-B9-7xT"/>
                             <constraint firstItem="NTb-HT-tD3" firstAttribute="centerX" secondItem="FgA-j5-27w" secondAttribute="centerX" id="KCX-3x-yLa"/>
+                            <constraint firstItem="Z2X-gi-uO4" firstAttribute="top" secondItem="zWu-pT-Q9n" secondAttribute="top" id="QyY-bU-Xhy"/>
                             <constraint firstItem="NTb-HT-tD3" firstAttribute="centerY" secondItem="FgA-j5-27w" secondAttribute="centerY" id="S2U-AP-Fc8"/>
+                            <constraint firstItem="zWu-pT-Q9n" firstAttribute="bottom" secondItem="Z2X-gi-uO4" secondAttribute="bottom" id="ZFa-GC-IJ2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zWu-pT-Q9n"/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="xbb-na-wiG" appends="YES" id="RU6-DQ-sie"/>
-                        </connections>
                     </view>
                     <connections>
                         <outlet property="okButton" destination="tPm-up-hOH" id="iax-I8-YqU"/>
                         <outlet property="settingView" destination="NTb-HT-tD3" id="t6e-6N-GWz"/>
-                        <outlet property="soundImage" destination="H8H-iS-D6t" id="Sfk-cp-ZP2"/>
-                        <outlet property="vibratorImage" destination="ayT-24-nLD" id="RFH-Di-HbD"/>
+                        <outlet property="soundSwitch" destination="vn7-JF-xC9" id="Rpl-8d-OHd"/>
+                        <outlet property="vibratorSwitch" destination="WuY-aL-1Ox" id="csy-38-BgV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qp3-l1-xum" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="xbb-na-wiG">
-                    <connections>
-                        <action selector="viewTabed:" destination="aFw-hf-mO6" id="KCV-sC-Orm"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="934" y="-240"/>
         </scene>
     </scenes>
     <resources>
         <image name="background1" width="107" height="95"/>
-        <image name="checkBox" width="200" height="200"/>
         <image name="menu" width="128" height="128"/>
         <image name="repeat" width="128" height="128"/>
         <image name="setting" width="128" height="128"/>
